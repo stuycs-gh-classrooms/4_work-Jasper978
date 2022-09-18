@@ -1,28 +1,37 @@
 size (400,400);
 noStroke ();
+//head
 fill (#BCBABA);
 ellipse (200, 150, 300, 300);
 ellipse (200, 335, 50, 50);
 ellipse (125, 335, 50, 50);
 ellipse (275, 335, 50, 50);
+//teeth? #1
 beginShape ();
 vertex(250, 335);
 vertex(250, 245);
 vertex(300, 245);
 vertex(300 ,335);
 endShape(CLOSE);
+//teeth 2
 beginShape ();
 vertex (100, 335);
 vertex (100, 245);
 vertex (150, 245);
 vertex (150, 335);
 endShape (CLOSE);
+//teeth 3
 beginShape ();
 vertex (225, 245);
 vertex (225, 335);
 vertex (175, 335);
 vertex (175, 245);
 endShape (CLOSE);
+//eyes
 fill (#FF1212);
 ellipse (250, 100, 50, 60);
 ellipse (150, 100, 50, 60);
+//mouth
+fill (255);
+rotate (PI/3);
+ellipse (240, -100, 50, 75);
