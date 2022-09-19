@@ -1,8 +1,15 @@
 size (500,500);
 background (183,244,255);
-
+noStroke();
+colorMode(RGB, 500);
+for (int i = 0; i < 500; i++) {
+  for (int j = 0; j < 500; j++) {
+    stroke(i, j, 500);
+    point(i, j);
+  }
+}
 color red = color ( #D6133A );
-color white = color ( 250);
+color white = color (#FFFFFF);
 color brown = color (#8E745E);
 color yellow = color ( #F5EC34 );
 
