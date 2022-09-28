@@ -1,17 +1,23 @@
+void drawLightning(int x, int y, int numParts) {
+  int nexty = (height - y) / numParts;
+  int xVariation = 15;
+  while (y < height); {
+    stroke (#EFFF48);
+    strokeWeight ( random (1,10));
+    int nextx = int(random(x - xVariation, x + xVariation));
+    line (x, y, nextx, nexty);
+    x = nextx;
+    y = y + nexty ;
+}
+}
 
 void setup() {
   size(500, 500);
-  int numLightning = 5;
-  while (numLightning > 0) {
-    int cx = int (random (width));
-    int cy = int (random (height/2, height));
-    drawLightning (cx, cy, 10);
-  numLightning = numLightning - 1;
-}
-}
-void drawLightning(int x, int y, int numParts) {
-  fill(#FFFF4D);
-  strokeWeight (20);
-  line(x, y, x - (random (50)), y - (random (50)));
-  
+  background (0);
+//  int numLightning = 5;
+ // while (numLightning > 0) {
+    
+  drawLightning (200, 300, 20);
+ // numLightning = numLightning - 1;
+//}
 }
