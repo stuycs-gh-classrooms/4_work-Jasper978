@@ -1,0 +1,17 @@
+
+void setup() {
+  size(500, 500);
+  int numLightning = 5;
+  while (numLightning > 0) {
+    int cx = int (random (width));
+    int cy = int (random (height/2, height));
+    drawLightning (cx, cy, 10);
+  numLightning = numLightning - 1;
+}
+}
+void drawLightning(int x, int y, int numParts) {
+  fill(#FFFF4D);
+  strokeWeight (20);
+  line(x, y, x - (random (50)), y - (random (50)));
+  
+}
