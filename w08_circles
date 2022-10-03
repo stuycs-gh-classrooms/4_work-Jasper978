@@ -1,0 +1,25 @@
+int x;
+int movingX;
+int movingY;
+int radius;
+
+void setup() {
+  size(500, 500);
+  background (255);
+}//setup
+
+void draw() {
+  background (255);
+  circleRow (50, 500, 50, 100);
+  fill (255);
+  circle(x, 150, 100); 
+  x++;
+}//draw
+void circleRow( int startX, int endX, int y, int d) {
+  while (startX<endX) {
+    fill (#6FFFF4);
+  circle (startX, y, d);
+  circle (startX+d, y, d);
+  startX = startX+d;
+}
+}
