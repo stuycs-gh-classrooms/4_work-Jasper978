@@ -32,11 +32,12 @@ void draw() {
 }//draw
 
 void drawSinCurve(int degrees, int amplitude, int yOffset) {
-  circle (angle, a, dotDiameter);
+int z = 0;
+circle (angle-z, a, dotDiameter);
 angle++;
 a = amplitude * sin (radians (angle)) + yOffset;
 if (angle >= width) {
-angle=0;
+z+=width;
 }//if
 }
 void drawCircle(int degrees, int radius, int xOffset, int yOffset) {}
