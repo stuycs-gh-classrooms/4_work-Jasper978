@@ -14,6 +14,7 @@ void setup() {
 
 }//setup
 void draw () {
+  background(0);
   drawLines (xvals,yvals);
 
 }
@@ -32,3 +33,5 @@ void mousePressed () {
 yvals[numPoints]=int(mouseY);
 numPoints++;
 }
+
+
