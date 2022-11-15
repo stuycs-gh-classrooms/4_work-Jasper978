@@ -28,6 +28,6 @@ void drawLines(int[] xs, int[] ys) {
 }//drawLines
 
 void mousePressed () {
-xvals[numPoints]=int(random(width));
-yvals[numPoints]=int(random(height));
+xvals[numPoints]=mouseX;
+yvals[numPoints]=mouseY;
 }
