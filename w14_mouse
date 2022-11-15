@@ -1,0 +1,33 @@
+int[] xvals;
+int[] yvals;
+int MAX_POINTS = 1000;
+int numPoints;
+
+void setup() {
+  size(600, 400);
+  background(0);
+  xvals = new int[MAX_POINTS];
+  yvals = new int[MAX_POINTS];
+  xvals[0]=int(random(width));
+  yvals[0]=int(random(height));
+  numPoints = 0;
+
+}//setup
+void draw () {
+
+  drawLines (xvals,yvals);
+}
+
+void drawLines(int[] xs, int[] ys) {
+  stroke(255);
+  strokeWeight(3);
+  for (int i=1; i < numPoints; i++) {
+    line(xs[i-1], ys[i-1], xs[i] ,ys[i]);
+  }//for
+  numPoints++;
+}//drawLines
+
+void mousePressed () {
+xvals[numPoints]=int(random(width));
+yvals[numPoints]=int(random(height));
+}
