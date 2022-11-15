@@ -1,6 +1,6 @@
 int[] xvals;
 int[] yvals;
-int MAX_POINTS = 1000;
+int MAX_POINTS = 100000;
 int numPoints;
 
 void setup() {
@@ -14,20 +14,21 @@ void setup() {
 
 }//setup
 void draw () {
-
   drawLines (xvals,yvals);
+
 }
 
 void drawLines(int[] xs, int[] ys) {
-  stroke(255);
+  stroke(255,20,10);
   strokeWeight(3);
-  for (int i=1; i < numPoints; i++) {
-    line(xs[i-1], ys[i-1], xs[i] ,ys[i]);
+  for (int i=1; i < numPoints+1; i++) {
+    line(xs[i], ys[i], xs[i+1] ,ys[i+1]);
   }//for
-  numPoints++;
 }//drawLines
 
+
 void mousePressed () {
-xvals[numPoints]=mouseX;
-yvals[numPoints]=mouseY;
+  xvals[numPoints]=int(mouseX);
+yvals[numPoints]=int(mouseY);
+numPoints++;
 }
