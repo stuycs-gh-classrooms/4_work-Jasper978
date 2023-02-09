@@ -13,7 +13,7 @@ void draw() {
 
 void keyPressed() {
   if (key == 'r') {
-    image(art, 0, 0);
+loadImage("Eating.png");
   }
 if (key=='g'){
   grayscale(art);
@@ -23,12 +23,10 @@ if (key=='g'){
 
 void grayscale(PImage img) {
 for (int i=0;i<art.pixels.length;i++){
-color c=art.pixels[i];
-int r=int(red(c));
-int g=int(green(c));
-int b=int(blue(c));
-color newC=((r+g+b)/3);
-art.pixels[i]=newC;
+color c=img.pixels[i];
+int newC=int((red(c)+green(c)+blue(c))/3);
+img.pixels[i]=int(newC);
+
+img.updatePixels();
 }
-art.updatePixels();
 }
