@@ -25,7 +25,7 @@ void grayscale(PImage img) {
 for (int i=0;i<art.pixels.length;i++){
 color c=img.pixels[i];
 int newC=int((red(c)+green(c)+blue(c))/3);
-img.pixels[i]=int(newC);
+img.pixels[i]=img.pixels[newC];
 
 img.updatePixels();
 }
