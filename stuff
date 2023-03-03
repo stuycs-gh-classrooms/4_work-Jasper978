@@ -1,4 +1,3 @@
-
 String s0 = "tcgcagctcgaaccactatg";
 String s1 = "agcgtcgagcttggtgatac";
 String s2 = "atcgtccagctatgtgatac";
@@ -11,6 +10,14 @@ void setup() {
   background(0);
   textAlign(LEFT, TOP);
 
+  String codonTest = "tcg"; //start of string
+  println("looking for " + codonTest + " in [" + s0 + "] " + findCodon(s0, codonTest) );
+  codonTest = "atc"; //end of string
+  println("looking for " + codonTest + " in [" + s0 + "] " + findCodon(s0, codonTest) );
+  codonTest = "qqq"; //not present
+  println("looking for " + codonTest + " in [" + s0 + "] " + findCodon(s0, codonTest) );
+  println();
+  
   strandCompare(s0, s1, 0, 0, NUC_SIZE);
 
   strandCompare(s0, s2, 0, NUC_SIZE*3, NUC_SIZE);
@@ -103,11 +110,17 @@ color charToColor(char c) {
 }//charTocolor
 
 int findCodon(String strand, String codon) {
-    if (strand.equals(codon)==true) {
-      return 1;
+for (int i=0;i<strand.length-3;i++){
+  if (strand.substring(i,i+2).equals(codon).=true) {
+      return i;    
     } 
     else {
       return -1;
     }
   }
+}
 
+//int findProteinStart(String strand){
+
+//}
+  
