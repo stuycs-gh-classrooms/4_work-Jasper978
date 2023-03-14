@@ -14,19 +14,18 @@ inside=#15EAD0;
 }
 
 void addPoint(int x, int y){
-if (numPoints>setPoints){
-setPoints++;
-}
-else {
-
+for (int i=0; i<numPoints;i++){
+vertices[i]= new Point(x,y);
 }
 }
   
 void display(){
 fill(border);
   beginShape();
-vertex
-endShape();
+  for (int i=0;i<numPoints;i++){
+vertex(vertices[i].x,vertices[i].y);
+  }
+endShape(CLOSE);
 }
   
 }//class
