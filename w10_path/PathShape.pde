@@ -14,18 +14,40 @@ inside=#15EAD0;
 }
 
 void addPoint(int x, int y){
-for (int i=0; i<numPoints;i++){
-vertices[i]= new Point(x,y);
+if(setPoints<numPoints){
+  vertices[setPoints]= new Point(x,y);
+  setPoints++;
 }
 }
   
+PathShape(int a, int minX, int minY, int maxX, int maxY){
+numPoints=a;
+setPoints=0;
+vertices=new Point[numPoints];
+border=#FA3F3F;
+inside=#15EAD0;
+makeRandomVertices(minX,minY,maxX,maxY);
+}
+
+  void makeRandomVertices(int minX, int minY, int maxX, int maxY){
+ if( setPoints<numPoints){
+ vertices[setPoints]=new Point(minX,minY,maxX,maxY);
+ setPoints++;
+ }
+  }  
+  
 void display(){
-fill(border);
   beginShape();
-  for (int i=0;i<numPoints;i++){
+  stroke(border);
+  fill(inside);
+  for (int i=0;i<setPoints;i++){
 vertex(vertices[i].x,vertices[i].y);
   }
 endShape(CLOSE);
 }
+
+
+  
+  
   
 }//class
