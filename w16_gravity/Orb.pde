@@ -6,6 +6,8 @@ class Orb {
   int size;
   float mass;
   color c;
+  int MIN_SIZE,MIN_MASS,MAX_SIZE,MAX_MASS;
+  
 
   Orb(int x, int y, int s, float m) {
     position = new PVector(x, y);
@@ -77,7 +79,12 @@ class Orb {
   }//display
 
   PVector getGravity(Orb o, float GRAVITY){
-  acceleration = GRAVITY * o;
-  
+    float d=this.position.dist(o.position);
+   float f=((GRAVITY * (mass * o.mass)) / sq(d));
+   PVector direction = PVector.sub(this.position,o.position);
+   direction.normalize();
+   direction.mult(f);
+   return direction;
   }
+  
 }//OrbNode
