@@ -6,7 +6,10 @@ class Orb {
   int size;
   float mass;
   color c;
-  int MIN_SIZE,MIN_MASS,MAX_SIZE,MAX_MASS;
+  int MIN_SIZE=10;
+  int MIN_MASS=10;
+  int MAX_SIZE=100;
+  int MAX_MASS=100;
   
 
   Orb(int x, int y, int s, float m) {
