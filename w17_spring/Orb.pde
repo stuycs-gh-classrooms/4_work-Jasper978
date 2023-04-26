@@ -91,11 +91,14 @@ class Orb {
   }//display
 
   PVector getSpring (Orb o, int springLength, float springConstant){
-  float mag=springLength*springConstant;
+    float d=(this.position.dist(o.position))-springLength;
+//    if (d<=0){
+  //  d=this.position.dist(o.position)+springLength;
+    //}
+  float mag=d*springConstant;
   PVector dir=PVector.sub(o.position,this.position);
   dir.normalize();
   dir.mult(mag);
   return dir;
-
   }
 }//OrbNode
