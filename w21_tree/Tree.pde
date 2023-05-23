@@ -9,10 +9,11 @@ Tree(int x, int y, int numLevels){
   position = new PVector(x,y);
 root= new TreeNode(char(d), position);
 totalLevels=numLevels;
+root.left=makeTree(x,y,numLevels);
 }
 
 TreeNode makeTree(int x, int y, int numLevels){
-  int d= int(random(255));
+  int d= int(random(26));
   position = new PVector(x,y);
   TreeNode curr;
 curr= new TreeNode(char(d), position);
