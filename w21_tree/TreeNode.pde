@@ -13,10 +13,11 @@ class TreeNode {
     data = d;
     position = p;
     size = 25;
-    c = 255;
+    c = color(int(random(255)),int(random(255)),int(random(255)));
   }//constructor
 
   void display() {
+    strokeWeight(2);
     if (left != null) {
       stroke(230, 0, 230);
       line(position.x, position.y, left.position.x, left.position.y);
@@ -30,9 +31,10 @@ class TreeNode {
     textAlign(CENTER, CENTER);
     textSize(size - 5);
     fill(c);
-    stroke(0);
+    noStroke();
     circle(position.x, position.y, size);
-    fill(0);
+    stroke(0);
+    fill(int(random(255)),int(random(255)),int(random(255)));
     text(data, position.x, position.y);
   }//display
 
