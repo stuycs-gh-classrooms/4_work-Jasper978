@@ -4,7 +4,7 @@ Tree oak;
 void setup() {
   size(800, 500);
 
-  oak = new Tree(width/2, 50, 4);
-  oak.display(oak.root);
+  oak = new Tree(5, width/2, 4);
+  oak.display();
 
 }//setup
