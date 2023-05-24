@@ -19,12 +19,15 @@ class Tree {
       TreeNode tn = new TreeNode(c, p);
 
       float xoffset = width / (pow(2, totalLevels - numLevels+2));
-      PVector leftP = new PVector(p.x + xoffset * -1, p.y + 75);
+      PVector leftP = new PVector(p.x - xoffset, p.y + 75);
       PVector rightP = new PVector(p.x + xoffset, p.y + 75);
 
+//if(int(random(10))>2){
         tn.left = makeTree(numLevels-1, leftP);
+//}for not full tree
+//if(int(random(10))>2){
         tn.right = makeTree(numLevels-1, rightP);
-      
+//}//for not full tree
       return tn;
     }//make more tree!
   }//makeTree
