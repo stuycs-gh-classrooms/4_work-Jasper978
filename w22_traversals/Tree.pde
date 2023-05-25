@@ -32,21 +32,20 @@ class Tree {
     }//make more tree!
   }//makeTree
   
+String preOrder(TreeNode tn){
+if (tn==null){
+return "";
+}
+else{
+return tn.data + preOrder(tn.left)+preOrder(tn.right);
+}
+}
   String inOrder(TreeNode tn){
   if (tn==null){
   return "";
   }
   else{
-  return "tn.data + inOrder(tn.right) + inOrder(tn.left)";
-  }
-  }
-
-  String preOrder(TreeNode tn){
-  if (tn==null){
-  return "";
-  }
-  else{
-  return "inOrder(tn.right) + tn.data + inOrder(tn.left)";
+  return inOrder(tn.left) + tn.data + inOrder(tn.right);
   }
   }
   
@@ -55,7 +54,7 @@ class Tree {
   return "";
   }
   else{
-  return "inOrder(tn.left) + tn.data + inOrder(tn.right) ";
+  return postOrder(tn.right) + tn.data + postOrder(tn.left);
   }
   }
   
