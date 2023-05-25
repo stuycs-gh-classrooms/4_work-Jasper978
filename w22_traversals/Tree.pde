@@ -54,7 +54,7 @@ return tn.data + preOrder(tn.left)+preOrder(tn.right);
   return "";
   }
   else{
-  return postOrder(tn.right) + tn.data + postOrder(tn.left);
+  return  postOrder(tn.left) + postOrder(tn.right) + tn.data ;
   }
   }
   
